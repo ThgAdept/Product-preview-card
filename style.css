@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+/*General stylings*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-cyan: rgb(60, 128, 103);
+    --very-dark-cyan: rgb(42, 87, 70);
+    --cream: rgb(242, 235, 227);
+
+    --very-dark-blue: rgb(28, 35, 43);
+    --dark-greyish-blue: rgb(108, 114, 137);
+    --white: rgb(255, 255, 255);
+}
+
+body {
+    background-color: var(--cream);
+    min-height: 100vh;
+}
+
+/*Typography*/
+
+h1, h2 {
+    font-family: 'Fraunces';
+}
+h4, h3, p, a {
+    font-family: 'Montserrat';
+}
+
+p, h4 {
+    font-size: 14px;
+}
+
+h2 {
+    color: var(--dark-cyan);
+}
+
+h3 {
+    font-weight: 100;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+}
+
+h4 {
+    font-weight: 100;
+    text-decoration: line-through;
+}
+
+h3, h4, p {
+    color: var(--dark-greyish-blue);
+}
+
+/*Layout*/
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 40rem;
+    max-height: 30rem;
+    flex: 0 0 100%;
+    margin: 5rem auto;
+}
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: hidden;
+}
+
+/*Card one*/
+
+.p__img {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.img {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+/*Card two*/
+
+.details {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    max-width: 20rem;
+    padding: 1.5rem;
+    border-radius: 0 1rem 1rem 0;
+    background-color: var(--white);
+}
+
+.p__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.p__wrapper > .discounted__price {
+    margin-right: 1rem;
+}
+
+.card-title {
+    margin: 1rem 0 0 0;
+}
+
+.details > * + * {
+    margin-top: 2rem;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    padding: 0.7rem 4rem;
+    border-radius: 0.5rem;
+    transition: all .50s;
+}
+
+.btn:hover {
+    background-color: var(--very-dark-cyan);
+}
+
+/*Resposivity*/
+
+@media(max-width: 610px) {
+    main {
+        flex-flow: column nowrap;
+        max-height: 40rem;
+        max-width: 20rem;
+    }
+
+    .p__img {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .img {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .details {
+        min-height: 25rem;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .details > * + * {
+        margin-top: 1rem;
+    }
+}
